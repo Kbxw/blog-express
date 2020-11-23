@@ -37,8 +37,8 @@ app.get('/', async (req, res) => {
         res.render('index', { blog: data })
     });
 });
-app.get('/crear', (req, res) => {
-    res.render('crear', {  })
+app.get('/form', (req, res) => {
+    res.render('form', {  })
 });
 
 /* { ----------- API ROUTING ----------- } */
