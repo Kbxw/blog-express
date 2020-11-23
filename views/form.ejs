@@ -1,0 +1,28 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="blogs content">
+    <form action="/api/blog" method="POST">
+        <fieldset>
+            <legend>Crea un Test</legend><br>
+            <label for="name">Pregunta:</label>
+            <input type="text" name="question" id="question"><br>
+            <label for="type">Respuesta 1:</label>
+            <input type="text" name="answer1" id="answer1"><br>
+            <label for="type">Respuesta 2:</label>
+            <input type="text" name="answer2" id="answer2"><br>
+            <label for="type">Respuesta 3:</label>
+            <input type="text" name="answer3" id="answer3"><br>
+            <label for="type">Respuesta 4:</label>
+            <input type="text" name="answer4" id="answer4"><br>
+            <input type="submit" value="Crear Test">
+        </fieldset>
+    </form>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>
