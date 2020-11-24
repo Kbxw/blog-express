@@ -37,7 +37,7 @@ app.get('/', async (req, res) => {
         res.render('blog', { entradas: data })
     });
 });
-app.get('/form', (req, res) => {
+app.get('/form-entrada', (req, res) => {
     res.render('form', {  })
 });
 app.get('/blog/:id', async (req, res) => {

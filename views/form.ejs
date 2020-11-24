@@ -1,19 +1,16 @@
-<html lang="en">
+<html lang="es">
 <%- include("./partials/head.ejs") %>
 
 <body>
   <%- include("./partials/nav.ejs") %>
 
   <div class="blogs content">
-    <form action="/api/blog" method="POST">
-        <fieldset>
-            <legend>Blog creation</legend><br>
-            <label for="name">Titulo</label>
-            <textarea name="title" id="title rows="10" cols="30">The cat was playing in the garden.</textarea><br>
-            <label for="type">Snippet</label>
-            <textarea name="snippet" id="snippet rows="10" cols="30">The cat was playing in the garden.</textarea><br>        
-            <input type="submit" value="Crear Blog">
-        </fieldset>
+    <form action="api/entradas" method="POST" name="entrada">
+        <label for="fname">Titulo (*):</label><br>
+        <input type="text" name="title"><br>
+        <label for="fname">Snippet (*):</label><br>
+        <textarea name="snippet"></textarea><br>
+        <input type="submit" value="Publicar">
     </form>
   </div>
 
