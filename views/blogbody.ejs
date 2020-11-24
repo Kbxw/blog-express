@@ -1,0 +1,16 @@
+<html lang="es">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="blogs content">
+        <div class="blog entry">
+            <h2><%= entrada.title %></h2>
+            <p><%= entrada.snippet %></p>     
+        </div>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

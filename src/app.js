@@ -34,11 +34,16 @@ app.use((req, res, next) => {
 /* { ----------- RUTAS WEB ----------- } */
 app.get('/', async (req, res) => {
     await Blog.find({}).then((data) => {
-        res.render('blog', { blog: data })
+        res.render('blog', { entradas: data })
     });
 });
 app.get('/form', (req, res) => {
     res.render('form', {  })
+});
+app.get('/blog/:id', async (req, res) => {
+    await Blog.findById(req.params.id).then((data)=>{
+        res.render('blogbody', { entrada: data })
+    });
 });
 
 /* { ----------- API ROUTING ----------- } */

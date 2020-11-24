@@ -1,22 +1,23 @@
-<html lang="en">
+<html lang="es">
 <%- include("./partials/head.ejs") %>
 
 <body>
   <%- include("./partials/nav.ejs") %>
 
   <div class="blogs content">
-    <% if (blog.length > 0) { %>
-      <% blog.forEach(bl => { %>
-        <b><%= bl.question %></b>
-        <ol>
-        <li><i><%= bl.title %></i></li>
-        <li><i><%= bl.snippet %></i></li>
-        </ol>
+    <% if (entradas.length > 0) { %>
+      <% entradas.forEach(entrada => { %>
+        <div class="blog entry">
+            <h2><a href="/blog/<%= entrada._id %>"><%= entrada.title %></a></h2>
+            <p><%= entrada.snippet %></p>
+        </div>
       <% }) %>
     <% } else { %>
-      <p>¡No hay blog!</p>
+      <p>¡No hay entradas!</p>
     <% } %>
   </div>
+
+  <!--<audio autoplay="true" src="/audio/pimp.mp3"></audio>-->
 
   <%- include("./partials/footer.ejs") %>
 </body>
