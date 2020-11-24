@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 /* { ----------- RUTAS WEB ----------- } */
 app.get('/', async (req, res) => {
     await Blog.find({}).then((data) => {
-        res.render('index', { blog: data })
+        res.render('blog', { blog: data })
     });
 });
 app.get('/form', (req, res) => {
