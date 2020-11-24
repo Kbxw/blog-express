@@ -3,17 +3,14 @@ body {
   font-size: 30x;
   font-family: Arial, Helvetica, sans-serif;
   background-color: darkcyan;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-optical-sizing: initial;
-  
-  
 }
 
 .header {
   background-color: #f1f1f1;
   padding: 40px;
   text-align: center;
-
 }
 
 #nav {
@@ -54,3 +51,5 @@ body {
 .sticky + .content {
   padding-top: 60px;
 }
+
+/*# sourceMappingURL=style.scss.map */
