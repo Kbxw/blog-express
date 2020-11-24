@@ -1,7 +1,10 @@
 body {
   margin: 0;
-  font-size: 28px;
+  font-size: 40x;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: darkcyan;
+  font-family: 'Courier New', Courier, monospace;
+  
 }
 
 .header {
