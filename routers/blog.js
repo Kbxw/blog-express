@@ -1,5 +1,5 @@
 const express = require('express')
-const Test = require('../models/test')
+const Blog = require('../models/test')
 const router = new express.Router()
 
 router.post('/tests', async (req, res) => {
@@ -16,7 +16,7 @@ router.post('/tests', async (req, res) => {
 
 router.get('/tests', async (req, res) => {
     try {
-        const tests = await Test.find({})
+        const tests = await Blog.find({})
         res.send(tests)
     } catch (e) {
         res.status(500).send()
@@ -27,7 +27,7 @@ router.get('/tests/:id', async (req, res) => {
     const _id = req.params.id
 
     try {
-        const test = await Test.findById(_id)
+        const test = await Blog.findById(_id)
 
         if (!test) {
             return res.status(404).send()
@@ -63,7 +63,7 @@ router.patch('/tests/:id', async (req, res) => {
 
 router.delete('/tests/:id', async (req, res) => {
     try {
-        const test = await Test.findByIdAndDelete(req.params.id)
+        const test = await Blog.findByIdAndDelete(req.params.id)
 
         if (!test) {
             res.status(404).send()
