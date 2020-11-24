@@ -3,11 +3,11 @@ const Blog = require('../models/blog')
 const router = new express.Router()
 
 router.post('/entradas', async (req, res) => {
-    const test = new Test(req.body)
+    const entrada = new Blog(req.body)
 
     try {
-        await test.save()
-        //res.status(201).send(test)
+        await entrada.save()
+        //res.status(201).send(entrada)
         res.redirect('/');
     } catch (e) {
         res.status(400).send(e)
@@ -16,8 +16,8 @@ router.post('/entradas', async (req, res) => {
 
 router.get('/entradas', async (req, res) => {
     try {
-        const tests = await Blog.find({})
-        res.send(tests)
+        const entradas = await Blog.find({})
+        res.send(entradas)
     } catch (e) {
         res.status(500).send()
     }
@@ -27,13 +27,13 @@ router.get('/entradas/:id', async (req, res) => {
     const _id = req.params.id
 
     try {
-        const test = await Blog.findById(_id)
+        const entrada = await Blog.findById(_id)
 
-        if (!test) {
+        if (!entrada) {
             return res.status(404).send()
         }
 
-        res.send(test)
+        res.send(entrada)
     } catch (e) {
         res.status(500).send()
     }
@@ -49,13 +49,13 @@ router.patch('/entradas/:id', async (req, res) => {
     }
 
     try {
-        const test = await Test.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
+        const entrada = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
 
-        if (!test) {
+        if (!entrada) {
             return res.status(404).send()
         }
 
-        res.send(test)
+        res.send(entrada)
     } catch (e) {
         res.status(400).send(e)
     }
@@ -63,13 +63,13 @@ router.patch('/entradas/:id', async (req, res) => {
 
 router.delete('/entradas/:id', async (req, res) => {
     try {
-        const test = await Blog.findByIdAndDelete(req.params.id)
+        const entrada = await Blog.findByIdAndDelete(req.params.id)
 
-        if (!test) {
+        if (!entrada) {
             res.status(404).send()
         }
 
-        res.send(test)
+        res.send(entrada)
     } catch (e) {
         res.status(500).send()
     }
